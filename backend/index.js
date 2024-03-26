@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const categoryRoutes = require("./routes/categoryRoutes");
+const productRoutes = require("./routes/productRoutes");
 
 const cors = require("cors");
 
@@ -37,6 +38,7 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 
 app.use("/categories", categoryRoutes);
+app.use("/products", productRoutes);
 
 //Start Server
 const PORT = process.env.PORT || 3000;
