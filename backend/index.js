@@ -1,10 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
+
 const categoryRoutes = require("./routes/categoryRoutes");
 const productRoutes = require("./routes/productRoutes");
-
-const cors = require("cors");
+const masterPasswordRoutes = require("./routes/masterPasswordRoutes");
+const otpRoutes = require("./routes/otpRoutes");
+const orderRoutes = require("./routes/orderRoutes");
 
 //Create Express app
 const app = express();
@@ -39,6 +42,9 @@ mongoose
 
 app.use("/categories", categoryRoutes);
 app.use("/products", productRoutes);
+app.use("/masterpasswords", masterPasswordRoutes);
+app.use("/users", otpRoutes);
+app.use("/orders", orderRoutes);
 
 //Start Server
 const PORT = process.env.PORT || 3000;
