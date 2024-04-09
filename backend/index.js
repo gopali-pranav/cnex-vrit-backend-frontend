@@ -8,6 +8,8 @@ const productRoutes = require("./routes/productRoutes");
 const masterPasswordRoutes = require("./routes/masterPasswordRoutes");
 const otpRoutes = require("./routes/otpRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const appointmentRoutes = require("./routes/appointmentRoutes");
+const couponRoutes = require("./routes/couponRoutes");
 
 //Create Express app
 const app = express();
@@ -45,6 +47,8 @@ app.use("/products", productRoutes);
 app.use("/masterpasswords", masterPasswordRoutes);
 app.use("/users", otpRoutes);
 app.use("/orders", orderRoutes);
+app.use("/appointments", appointmentRoutes);
+app.use("/coupons", couponRoutes);
 
 //Start Server
 const PORT = process.env.PORT || 3000;
